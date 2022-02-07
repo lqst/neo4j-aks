@@ -1,0 +1,18 @@
+neo4j:
+  resources:
+    cpu: "0.5"
+    memory: "2Gi"
+
+  password: "test1234"
+
+  edition: "enterprise"
+  acceptLicenseAgreement: "yes"
+
+volumes:
+  data:
+    mode: "volume"
+    volume:
+      azureDisk:
+        diskName: "my-neo4j-disk"
+        diskURI: "/subscriptions/c3a9296c-966e-4a71-8371-d5cee464b35a/resourceGroups/rg_aks/providers/Microsoft.Compute/disks/my-neo4j-disk"
+        kind: Managed
